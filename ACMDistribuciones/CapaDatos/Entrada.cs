@@ -71,7 +71,7 @@ namespace CapaDatos
         /// Crea entrada
         /// </summary>
         /// <returns></returns>
-        public int CrearEntrada()
+        public int CrearEntrada(int IdProveedor,int IdProducto)
         {
             AccesoDatosDataContext objAccesoDatosDataContext = new AccesoDatosDataContext();
             int Filas = 0;
@@ -79,12 +79,14 @@ namespace CapaDatos
             {
                 
                 Filas = objAccesoDatosDataContext.spCrearEntrada(DateTime.Now, this.objUser._gdIdUser);
-                
+                objAccesoDatosDataContext.spCrearDetalleProveedor(IdProducto,IdProveedor);//Retorna 0 Exitoso -1 Ya existe una asociacion
                 var IdEntrada = objAccesoDatosDataContext.spConsultarIdEntrada();
+               
                 if(Filas == 0)
                 {
                     foreach(var E in objListaDetalleEntrada)
                     {
+                       //Aqui asociar DetalleProveedor
                         Filas = objAccesoDatosDataContext.spCrearDetalleEntrada(IdEntrada.First().Column1, E._intProducto, E._decNuevoPrecio, E._intCantidadIngresada);
                         objAccesoDatosDataContext.spActualizarExistenciasEntrada(E._intProducto,E._intCantidadIngresada);
                     }
@@ -186,53 +188,125 @@ namespace CapaDatos
         {
             List<VistaReporteEntrada> objListEntrada = new List<VistaReporteEntrada>();
             AccesoDatosDataContext objAccesoDatosDataContext = new AccesoDatosDataContext();
-            int intPosicionItem = 0;
+            
+            VistaReporteEntrada objVista = new VistaReporteEntrada();
             try
             {
                 switch (Filtro)
                 {
                     case  "Categoria":
-                        var QueryCategoria = from entrada
-                            in objAccesoDatosDataContext.VistaReporteEntrada
-                            where entrada.Descripcion == dato
-                            select entrada;
-                        foreach (var item in QueryCategoria)
-                        {
-                            objListEntrada.Insert(intPosicionItem,item);
-                            intPosicionItem++;
-                        }
+
+                        var QueryCategoria = objAccesoDatosDataContext.spConsultarReporteEntradas(dato);
+                        //if (QueryCategoria.Count<VistaReporteEntrada>() > 0)
+                        //{
+                         
+                            foreach (var item in QueryCategoria.ToList<VistaReporteEntrada>())
+                            {
+                                objVista.Codigo = item.Codigo;
+                                objVista.FK_IdEntrada = item.FK_IdEntrada;
+                                objVista.FK_IdProducto = item.FK_IdProducto;
+                                objVista.FechaEntrada = item.FechaEntrada;
+                                objVista.CantidadEntrada = item.CantidadEntrada;
+                                objVista.FkIdDeatalleUsuario = item.FkIdDeatalleUsuario;
+                                objVista.NombreCategoria = item.NombreCategoria;
+                                objVista.NombreProducto = item.NombreProducto;
+                                objVista.PrecioEntrada = item.PrecioEntrada;
+                                objVista.PrecioProveedor = item.PrecioProveedor;
+                                objVista.NombreUsuario = item.NombreUsuario;
+                            
+                                objListEntrada.Add(objVista);
+                                objVista = new VistaReporteEntrada();
+                            }   
+                        //}
+                        //else
+                        //{
+                        //    objListEntrada = null;
+                        //}
+                            if (objListEntrada.Count <= 0)
+                            {
+
+                                objListEntrada = null;
+
+                            }
+
+
                         break;
                     case "Producto":
-                            
-                            var QueryProducto = from entrada
-                            in objAccesoDatosDataContext.VistaReporteEntrada
-                            where entrada.Descripcion == dato
-                            select entrada;
-                            foreach (var item in QueryProducto)
+
+                        var QueryProducto = objAccesoDatosDataContext.spConsultarReporteEntradas(dato);
+                        //if (QueryProducto.Count<VistaReporteEntrada>() > 0)
+                        //{
+                            foreach (var item in QueryProducto.ToList<VistaReporteEntrada>())
                             {
-                                objListEntrada.Insert(intPosicionItem,item);
-                                intPosicionItem++;
+                                objVista.Codigo = item.Codigo;
+                                objVista.FK_IdEntrada = item.FK_IdEntrada;
+                                objVista.FK_IdProducto = item.FK_IdProducto;
+                                objVista.FechaEntrada = item.FechaEntrada;
+                                objVista.CantidadEntrada = item.CantidadEntrada;
+                                objVista.FkIdDeatalleUsuario = item.FkIdDeatalleUsuario;
+                                objVista.NombreCategoria = item.NombreCategoria;
+                                objVista.NombreProducto = item.NombreProducto;
+                                objVista.PrecioEntrada = item.PrecioEntrada;
+                                objVista.PrecioProveedor = item.PrecioProveedor;
+                                objVista.NombreUsuario = item.NombreUsuario;
+                            
+                                objListEntrada.Add(objVista);
+                                objVista = new VistaReporteEntrada(); 
                             }
+
+                        //}
+                        //else
+                        //{
+                        //    objListEntrada = null;
+                        //}
+                            if (objListEntrada.Count <= 0)
+                            {
+
+                                objListEntrada = null;
+
+                            }  
                         break;
                     case "Proveedor":
 
-                        var QueryProveedor = from entrada
-                        in objAccesoDatosDataContext.VistaReporteEntrada
-                                            where entrada.NombreProveedor == dato
-                                            select entrada;
-                        foreach (var item in QueryProveedor)
-                        {
-                            objListEntrada.Insert(intPosicionItem, item);
-                            intPosicionItem++;
-                        }
+                        var QueryProveedor = objAccesoDatosDataContext.spConsultarReporteEntradaProveedor(dato);
+                        //if (QueryProveedor.Count<VistaReporteEntradaProveedores>() > 0)
+                        //{
+                            foreach (var item in QueryProveedor.ToList<VistaReporteEntradaProveedores>())
+                            {
+                                objVista.Codigo = item.Codigo;
+                                objVista.FK_IdEntrada = item.FK_IdEntrada;
+                                objVista.FK_IdProducto = item.FK_IdProducto;
+                                objVista.FechaEntrada = item.FechaEntrada;
+                                objVista.CantidadEntrada = item.CantidadEntrada;
+                                objVista.FkIdDeatalleUsuario = item.FkIdDeatalleUsuario;
+                                objVista.NombreCategoria = "";
+                                objVista.NombreProducto = item.NombreProducto;
+                                objVista.PrecioEntrada = item.PrecioEntrada;
+                                objVista.PrecioProveedor = item.PrecioProveedor;
+                                objVista.NombreUsuario = item.NombreUsuario;
+                            
+                                objListEntrada.Add(objVista);
+                                objVista = new VistaReporteEntrada(); 
+                            }
+                            if (objListEntrada.Count <= 0)
+                            {
+
+                                objListEntrada = null;
+
+                            }
+                        //}
+                        //else
+                        //{
+                        //    objListEntrada = null;
+                        //}
                         break;
                 }
 
             }
             catch (Exception)
             {
-                
-                throw;
+
+                objListEntrada = null;
 
             }
             return objListEntrada;
@@ -248,24 +322,39 @@ namespace CapaDatos
         {
             List<VistaReporteEntrada> objListEntrada = new List<VistaReporteEntrada>();
             AccesoDatosDataContext objAccesoDatosDataContext = new AccesoDatosDataContext();
-            int intPosicioItem = 0;
+            VistaReporteEntrada objVista = new VistaReporteEntrada();
+            
             try
             {
-                var QueryFecha= from entradaFecha
-                                in objAccesoDatosDataContext.VistaReporteEntrada 
-                                where entradaFecha.FechaEntrada >= FechaInicial && entradaFecha.FechaEntrada <= FechaFinal 
-                                select entradaFecha;
+                var QueryFecha= objAccesoDatosDataContext.spConsultarReporteEntradaFecha(FechaInicial,FechaFinal);
 
-                foreach (var item in QueryFecha)
+                foreach (var item in QueryFecha.ToList<VistaReporteEntrada>())
                 {
-                    objListEntrada.Insert(intPosicioItem,item);
-                    intPosicioItem++;
+
+                    objVista.Codigo = item.Codigo;
+                    objVista.FK_IdEntrada = item.FK_IdEntrada;
+                    objVista.FK_IdProducto = item.FK_IdProducto;
+                    objVista.FechaEntrada = item.FechaEntrada;
+                    objVista.CantidadEntrada = item.CantidadEntrada;
+                    objVista.FkIdDeatalleUsuario = item.FkIdDeatalleUsuario;
+                    objVista.NombreCategoria = "";
+                    objVista.NombreProducto = item.NombreProducto;
+                    objVista.PrecioEntrada = item.PrecioEntrada;
+                    objVista.PrecioProveedor = item.PrecioProveedor;
+                    objVista.NombreUsuario = item.NombreUsuario;
+
+                    objListEntrada.Add(objVista);
+                    objVista = new VistaReporteEntrada(); 
+                }
+                if (objListEntrada.Count <= 0 )
+                {
+                    objListEntrada = null;
                 }
             }
             catch (Exception)
             {
 
-                throw;
+                objListEntrada = null;
             }
             return objListEntrada;
         }
