@@ -1,0 +1,457 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ACMDistribuidores" Class="AccesoDatosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=SHINOBI\MOHAN;Initial Catalog=ACMDistribuidores;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="ACMDistribuidoresConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Categorias" Member="Categorias">
+    <Type Name="Categorias">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionCategoria" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Proveedores" Member="Proveedores">
+    <Type Name="Proveedores">
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NombreContacto" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EstadoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaPedido" Member="VistaPedido">
+    <Type Name="VistaPedido">
+      <Column Name="IdSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreUsuario" Type="System.String" DbType="NVarChar(510) NOT NULL" CanBeNull="false" />
+      <Column Name="CantidadSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaProductos" Member="VistaProductos">
+    <Type Name="VistaProductos" Id="ID1">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVentaMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="PrecioVentaMinorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Existencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaReporteEntrada" Member="VistaReporteEntrada">
+    <Type Name="VistaReporteEntrada">
+      <Column Name="IdEntrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEntrada" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CantidadEntrada" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="precioEntrada" Type="System.Decimal" DbType="Money" CanBeNull="true" />
+      <Column Name="Precio_proveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Precio_Minorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Existencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IdDetalleProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_Id_Proveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_Id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NombreContacto" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EstadoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaReporteProductos" Member="VistaReporteProductos">
+    <Type Name="VistaReporteProductos">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="Imagen" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="UnidadPorCaja" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVentaMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="PrecioVentaMinorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Existencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FK_IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Categoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdDetalleProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_Id_Proveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_Id_Producto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NombreContacto" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EstadoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaReporteSalida" Member="VistaReporteSalida">
+    <Type Name="VistaReporteSalida">
+      <Column Name="IdSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="IdDetalleSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="CantidadSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVentaMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="PrecioVentaMinorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Existencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="IdUsuario" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PrimerNombre" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SegundoNombre" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PrimerApellido" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SegundoApellido" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cedula" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaSalidas" Member="VistaSalidas">
+    <Type Name="VistaSalidas">
+      <Column Name="IdSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaSalida" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Fk_IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="CantidadSalida" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVentaMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Precio" Type="System.Decimal" DbType="Decimal(33,5)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VistaUsuarios" Member="VistaUsuarios">
+    <Type Name="VistaUsuarios">
+      <Column Name="IdUsuario" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="PrimerNombre" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SegundoNombre" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="PrimerApellido" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="SegundoApellido" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Cedula" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(25)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.spActualizarExistenciasEntrada" Method="spActualizarExistenciasEntrada">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CantidadIngresada" Parameter="cantidadIngresada" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarExistenciasPedido" Method="spActualizarExistenciasPedido">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CantidadSolicitada" Parameter="cantidadSolicitada" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarImagenProducto" Method="spActualizarImagenProducto">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevaImagen" Parameter="nuevaImagen" Type="System.Data.Linq.Binary" DbType="VarBinary(1)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarNombreCategoria" Method="spActualizarNombreCategoria">
+    <Parameter Name="IdCategoria" Parameter="idCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoNombre" Parameter="nuevoNombre" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="NuevaDescripcion" Parameter="nuevaDescripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarPrecioProveedor" Method="spActualizarPrecioProveedor">
+    <Parameter Name="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoPrecio" Parameter="nuevoPrecio" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarProducto" Method="spActualizarProducto">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoNombre" Parameter="nuevoNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevaDescripcion" Parameter="nuevaDescripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="PrecioProveedor" Parameter="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarProveedor" Method="spActualizarProveedor">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoNombre" Parameter="nuevoNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoNit" Parameter="nuevoNit" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevaDireccion" Parameter="nuevaDireccion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoTelefono" Parameter="nuevoTelefono" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevaCelular" Parameter="nuevaCelular" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoNombreContacto" Parameter="nuevoNombreContacto" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoEmail" Parameter="nuevoEmail" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spActualizarUsuario" Method="spActualizarUsuario">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="NuevoPrimerNombre" Parameter="nuevoPrimerNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoSegundoNombre" Parameter="nuevoSegundoNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoPrimerApellidos" Parameter="nuevoPrimerApellidos" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevoSegundoApellidos" Parameter="nuevoSegundoApellidos" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NuevaCedula" Parameter="nuevaCedula" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="NuevoTelefono" Parameter="nuevoTelefono" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="NuevoCelular" Parameter="nuevoCelular" Type="System.String" DbType="NVarChar(25)" />
+    <Parameter Name="NuevoEmail" Parameter="nuevoEmail" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spConsultarCategoria" Method="spConsultarCategoria">
+    <Parameter Name="Buscar" Parameter="buscar" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType Name="spConsultarCategoriaResult">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionCategoria" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarCategorias" Method="spConsultarCategorias">
+    <ElementType Name="spConsultarCategoriasResult">
+      <Column Name="IdCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionCategoria" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarIdCategoria" Method="spConsultarIdCategoria">
+    <ElementType Name="spConsultarIdCategoriaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarIdEntrada" Method="spConsultarIdEntrada">
+    <ElementType Name="spConsultarIdEntradaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarIdProveedores" Method="spConsultarIdProveedores">
+    <ElementType Name="spConsultarIdProveedoresResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarIdSalida" Method="spConsultarIdSalida">
+    <ElementType Name="spConsultarIdSalidaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarProducto" Method="spConsultarProducto">
+    <Parameter Name="buscar" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType Name="spConsultarProductoResult">
+      <Column Name="IdProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Codigo" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProducto" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="PrecioProveedor" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Column Name="PrecioVentaMayorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="PrecioVentaMinorista" Type="System.Decimal" DbType="Decimal(22,5)" CanBeNull="true" />
+      <Column Name="Existencias" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreCategoria" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarProductosCategoria" Method="spConsultarProductosCategoria">
+    <Parameter Name="buscar" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType IdRef="ID1" />
+  </Function>
+  <Function Name="dbo.spConsultarProveedor" Method="spConsultarProveedor">
+    <Parameter Name="NombreProveedor" Parameter="nombreProveedor" Type="System.String" DbType="NVarChar(256)" />
+    <ElementType Name="spConsultarProveedorResult">
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NombreContacto" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EstadoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spConsultarProveedores" Method="spConsultarProveedores">
+    <ElementType Name="spConsultarProveedoresResult">
+      <Column Name="IdProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NombreProveedor" Type="System.String" DbType="NVarChar(256) NOT NULL" CanBeNull="false" />
+      <Column Name="NIT" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Direccion" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Telefono" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="Celular" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="NombreContacto" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EMail" Type="System.String" DbType="NVarChar(256)" CanBeNull="true" />
+      <Column Name="EstadoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spCrearCategoria" Method="spCrearCategoria">
+    <Parameter Name="Nombre" Parameter="nombre" Type="System.String" DbType="NVarChar(255)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearCategoriaXML" Method="spCrearCategoriaXML">
+    <Parameter Name="IdCategoria" Parameter="idCategoria" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearDetalleEntrada" Method="spCrearDetalleEntrada">
+    <Parameter Name="IdEntrada" Parameter="idEntrada" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NuevoPrecioProveedor" Parameter="nuevoPrecioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="CantidadIngresada" Parameter="cantidadIngresada" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearDetalleProveedor" Method="spCrearDetalleProveedor">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearDetalleSalida" Method="spCrearDetalleSalida">
+    <Parameter Name="IdSalida" Parameter="idSalida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CantidadIngresada" Parameter="cantidadIngresada" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearDetalleSalidaXML" Method="spCrearDetalleSalidaXML">
+    <Parameter Name="IdSalida" Parameter="idSalida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="CantidadIngresada" Parameter="cantidadIngresada" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearEntrada" Method="spCrearEntrada">
+    <Parameter Name="FechaEntrada" Parameter="fechaEntrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearEntradaXML" Method="spCrearEntradaXML">
+    <Parameter Name="IdEntrada" Parameter="idEntrada" Type="System.Int32" DbType="Int" />
+    <Parameter Name="FechaEntrada" Parameter="fechaEntrada" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearProducto" Method="spCrearProducto">
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NombreProducto" Parameter="nombreProducto" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="PrecioProveedor" Parameter="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Existencias" Parameter="existencias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Categoria" Parameter="categoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearProductoXML" Method="spCrearProductoXML">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Codigo" Parameter="codigo" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NombreProducto" Parameter="nombreProducto" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Descripcion" Parameter="descripcion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="PrecioProveedor" Parameter="precioProveedor" Type="System.Decimal" DbType="Money" />
+    <Parameter Name="Existencias" Parameter="existencias" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Categoria" Parameter="categoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearProveedor" Method="spCrearProveedor">
+    <Parameter Name="NombreProveedor" Parameter="nombreProveedor" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Celular" Parameter="celular" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NombreContacto" Parameter="nombreContacto" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearProveedorXML" Method="spCrearProveedorXML">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NombreProveedor" Parameter="nombreProveedor" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Ciudad" Parameter="ciudad" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Direccion" Parameter="direccion" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Celular" Parameter="celular" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="NombreContacto" Parameter="nombreContacto" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearSalida" Method="spCrearSalida">
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearSalidaXML" Method="spCrearSalidaXML">
+    <Parameter Name="IdSalida" Parameter="idSalida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="Fecha" Parameter="fecha" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spCrearUsuario" Method="spCrearUsuario">
+    <Parameter Name="IdUser" Parameter="idUser" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="PrimerNombre" Parameter="primerNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="SegundoNombre" Parameter="segundoNombre" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="PrimerApellido" Parameter="primerApellido" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="SegundoApellido" Parameter="segundoApellido" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Cedula" Parameter="cedula" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Telefono" Parameter="telefono" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Email" Parameter="email" Type="System.String" DbType="NVarChar(256)" />
+    <Parameter Name="Celular" Parameter="celular" Type="System.String" DbType="NVarChar(256)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminarCategoria" Method="spEliminarCategoria">
+    <Parameter Name="IdCategoria" Parameter="idCategoria" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminarDetalleUsuario" Method="spEliminarDetalleUsuario">
+    <Parameter Name="IdDetalleUsuario" Parameter="idDetalleUsuario" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminarProducto" Method="spEliminarProducto">
+    <Parameter Name="IdProducto" Parameter="idProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spEliminarProveedor" Method="spEliminarProveedor">
+    <Parameter Name="IdProveedor" Parameter="idProveedor" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdCategoria" Method="spObtenerIdCategoria">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdDetalleEntrada" Method="spObtenerIdDetalleEntrada">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdDetalleProveedor" Method="spObtenerIdDetalleProveedor">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdDetalleSalida" Method="spObtenerIdDetalleSalida">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdEntrada" Method="spObtenerIdEntrada">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdProducto" Method="spObtenerIdProducto">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdProductoCategoria" Method="spObtenerIdProductoCategoria">
+    <Parameter Name="FK_IdCategoria" Parameter="fK_IdCategoria" Type="System.Int32" DbType="Int" />
+    <ElementType Name="spObtenerIdProductoCategoriaResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.spObtenerIdProveedor" Method="spObtenerIdProveedor">
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="dbo.spObtenerIdSalida" Method="spObtenerIdSalida">
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

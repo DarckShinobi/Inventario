@@ -1,0 +1,742 @@
+﻿body {
+}
+*
+{
+    padding:0px;
+    margin:0px;
+}
+a
+{
+    text-decoration:none;
+    text-decoration-style:none;
+}
+ul
+{
+    list-style:none;
+}
+
+.divUno /*Contenedor Uno*/ 
+{
+    height:80px;
+    width:auto;
+    background-color:#0B173B;
+}
+#logo /*logo*/
+{
+    /*border:1px solid white;*/
+    height:98%;
+    width:150px;
+    text-align:center;
+    color:white;
+    margin-left:125px;
+    float:left;
+}
+    #logo h1
+    {
+        padding-top:10px;
+    }
+#buscador
+{
+    /*border: 1px solid white;*/
+    height:98%;
+    width:400px;
+    float:left;
+    margin-left:140px;
+}
+.txbBuscador
+{
+    height:25px;
+    width:305px;
+    float:left;
+    margin-top:25px;
+}
+.btnBuscador
+{
+    height:29px;
+    width:90px;
+    float:left;
+    margin-top:25px;
+    margin-left:1px;
+    font-family:Britannic Bold;
+    font-size:19px;
+}
+#sesion
+{
+    /*border:1px solid white;*/
+    height:98%;
+    width:130px;
+    float:right;
+    margin-right:150px;
+    text-align:center;
+    padding-top:25px;
+}
+    #sesion a
+    {
+        color:white;
+        font-family:Times New Roman;  
+    }
+
+
+.divisionNavPrin /*Division del navegador*/
+{
+    /*border:1px solid red;*/
+    height:40px;
+    width:100%;
+    border-bottom:1px solid gray;
+    /*background-color:green;*/
+}
+#navUsuario
+{
+    margin-top:10px;
+    height:30px;
+    /*border:1px solid white;*/   
+}
+    #navUsuario ul
+    {
+        margin-left:340px;
+    }
+#navUsuario li
+{
+    float:left;
+    width:100px;
+    padding:5px;
+    margin:0px 1px 0px 1px;
+    text-align:center;
+    border-radius:5px;
+    background: -webkit-linear-gradient(90deg, gray, silver);
+    background: -moz-linear-gradient(90deg, gray, silver);
+    background: -o-linear-gradient(90deg, gray, silver);
+}
+    #navUsuario li a
+    {
+            color:black;
+    }
+    #navUsuario li:hover
+    {
+        margin-top:-3px;
+        background: -webkit-linear-gradient(90deg, black 60%, gray);
+        background: -moz-linear-gradient(90deg, black 60%, gray);
+        background: -o-linear-gradient(90deg, black 60%, gray);
+       
+    }
+    #navUsuario a:hover
+    {
+        color:white;
+    }
+.color
+{
+    float:left;
+    margin:5px;
+    height:20px;
+    width:20px;
+    border-radius:100px;
+    background:black;
+}
+.prueba
+{
+    background-color:red;
+}
+#divCategorias
+{
+    margin:5px auto 10px auto; 
+    border:1px solid black;
+    height:140px;
+    width:85%;
+    background-color:dimgray;
+}
+
+#divResultadoBus
+{
+    margin:auto;
+    width:80%;
+    height:200px;
+    /*border:1px solid green;*/
+    /*display:none;*/
+}
+
+#tituloResBus
+{
+    height:auto;
+    width:auto;
+    /*border:1px solid red;*/
+    margin:5px auto 5px auto;
+    /*display:none;*/
+}
+#tituloResBus ul li
+{
+    margin:1px;
+    float:left;
+    height:20px;
+    width:102px;
+    border:2px solid gray;
+    text-align:center;
+    background-color:#0B173B;
+    color:white;
+}
+
+    #tituloResBus ul li:first-child
+    {
+        width:250px;
+    }
+    #tituloResBus ul li:nth-child(3)
+    {
+        width:299px;
+    }
+#cuerpoRes
+{
+    background:red;
+    width:98%;
+    height:auto;
+}
+
+
+.divSubNav
+{
+    position:relative;
+    width:800px;
+    height:34px;
+    margin:auto;
+    margin-top:3px;
+    /*background:#0B173B;*/
+    border-radius:9px;
+    display:none;
+}
+.subNav
+{
+    /*border:1px solid green;*/
+    width:52%;
+    height:96%;
+    float:left;
+    margin-left:10px;
+}
+.subNav li
+{
+    float:left;
+    width:30%;
+    height:23px;
+    padding:3px;
+    margin:1px;
+    margin-top:4px;
+    padding-top:5px;
+    background: -webkit-linear-gradient(80deg, black 50%, #5882FA);
+    background: -moz-linear-gradient(80deg, black 50%, #5882FA);
+    background: -o-linear-gradient(80deg, black 50%, #5882FA);
+    border-radius:4px;
+    text-align:center;
+}
+.subNav li a
+{
+    color:white;
+}
+    .subNav li a:hover
+    {
+        color:#00FFFF;
+    }
+
+.busNav
+{
+    float:right;
+    width:45%;
+    margin-top:3px;
+    margin-left:-25px;
+    padding:2px;
+    padding-bottom:3px;
+    padding-left:10px;
+    background:#0B173B;
+    border-radius:5px;
+}
+.txbSubNav
+{
+    margin-top:2px;
+    margin-right:2px;
+    float:left;
+    width:75%;
+    height:23px;
+
+}
+.btnSubNav
+{
+    margin-top:2px;
+    float:left;
+    width:20%;
+    height:26px;
+}
+
+
+/*Formulario Crear Categoria*/
+#forCrearCat
+{
+    height:180px;
+    width:360px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}   
+.cabezeraFor /*Cabezera del formulario*/
+{
+    width:98%;
+    height:26px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+.titulo /*Titulo del formulario*/
+{
+    width:92%;
+    height:auto;
+    text-align:center;
+    color:white;
+    font-size:20px;
+    /*border:1px solid red;*/
+    float:left;
+}
+.salir /*Boton de salir*/
+{
+    float:right;
+    height:auto;
+    width:20px;
+    background:red;
+    color:white;
+    text-align:center;
+    border:1px solid black;
+    margin-right:3px;
+    margin-top:3px;
+    border-radius:3px;
+}
+.salir a
+{
+    color:white;
+}
+.cuerpoFor /*Cuerpo del formulario*/
+{
+    width:98%;
+    height:146px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+.filaFor  /*Filas del formulario*/
+{
+    padding-top:10px;
+}
+.lblFilaFor  /*label de las filas*/
+{
+    width:44%;
+    float:left;
+    color:white;
+    font-size:15px;
+    font-family:Microsoft New Tai Lue;
+    text-align:left;
+    padding-top:2px;
+    padding-left:15px;
+}
+.txbFilaFor  /*TextBox de las filas*/
+{
+    width:44%;
+    padding-right:15px;
+}
+.btnCrear  /*Boton*/
+{
+    margin-left:150px;
+    width:60px;
+}
+    .btnCrear:hover
+    {
+        background:gray;
+    }
+
+/*Formulario Editar Categoria*/
+.forEditar
+{
+    height:180px;
+    width:400px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+.busFor
+{
+    /*border:1px solid red;*/
+    border-bottom:1px solid white;
+    padding:3px;
+    padding-bottom:15px;
+    color:white;
+}
+.divEdicion
+{
+    border-top:groove 1px white;
+    /*border:1px solid red;*/
+    padding:3px;
+    padding-top:6px;
+    color:gray;
+}
+.forEliminar
+{
+    height:180px;
+    width:400px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+
+/*Navegacion den Productos*/
+.navPro
+{
+    width:98%;
+    height:98%;
+    /*background:red;*/
+}
+    .navPro li
+    {
+        margin:1px;
+        width:24%;
+        height:25px;
+        /*border:1px solid white;*/
+        float:left;
+        text-align:center;
+        padding-top:5px;
+        background: -webkit-linear-gradient(80deg, black 50%, green);
+        background: -moz-linear-gradient(80deg, black 50%, green);
+        background: -o-linear-gradient(80deg, black 50%, green);
+        border-radius:3px;
+        color:black;
+
+    }
+        .navPro li a
+        {
+            color:white;
+        }
+        .navPro li a:hover
+        {
+            color:#01DF3A;
+        }
+#acor
+{
+   width:200px;
+   height:95px;
+   background:#04B45F;
+   margin-top:10px;
+   margin-left:1px;
+   padding:20px 10px 20px 10px;
+   border-radius:6px;
+   position:relative;
+   display:none;
+}
+.menu
+{
+   border:1px solid black;
+   background:red;    
+}
+.txbBusProvProd
+{
+    margin-top:10px;
+    height:20px;
+    margin-bottom:5px;
+}
+.btnBusProvProd
+{
+    margin-top:5px;
+    height:20px;
+    width:70px;
+    border:1px solid black;
+}
+    .btnBusProvProd:hover
+    {
+        margin-top:3px;
+    }
+
+/*Formulario para crear productos*/
+#forCrearProd
+{
+     height:255px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoForCrearProd
+{
+    width:98%;
+    height:222px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+
+
+/*Formulario para editar Productos*/
+#forEdiProd
+{
+    height:290px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoEdiProd
+{
+    width:98%;
+    height:257px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+#forEliProd
+{
+   height:240px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoEliProd
+{
+    width:98%;
+    height:207px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+
+/*Navegador para proveeodes*/
+#subProv
+{
+    /*border:1px solid green;*/
+    margin-top:4px;
+    width:62%;
+    height:96%;
+    float:left;
+    margin-left:10px;
+}
+#busProv
+{
+    float:right;
+    width:35%;
+    margin-top:3px;
+    margin-left:-25px;
+    padding:2px;
+    padding-bottom:3px;
+    padding-left:10px;
+    background:#610B0B;
+    border-radius:5px;
+}
+#subProv li
+{
+        margin:1px;
+        width:24%;
+        height:25px;
+        /*border:1px solid white;*/
+        float:left;
+        text-align:center;
+        padding-top:5px;
+        background: -webkit-linear-gradient(80deg, black 50%, red);
+        background: -moz-linear-gradient(80deg, black 50%, red);
+        background: -o-linear-gradient(80deg, black 50%, red);
+        border-radius:3px;
+        color:black;
+}
+    #subProv li:hover
+    {
+        margin-top:-2px;
+    }
+    #subProv li a
+    {
+        color:white;
+    }
+        #subProv li a:hover
+        {
+            color:#FF4000;
+        }
+
+/*Formulario para crear Proveedores*/
+#forCrearProv
+{
+    height:255px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoForCrearProv
+{
+    width:98%;
+    height:222px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+#forEdiProv
+{
+    height:340px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoEdiProv
+{
+    width:98%;
+    height:306px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+
+/*Formulario para Eliminar Proveedores*/
+#forEliProv
+{
+     height:240px;
+    width:390px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+#cuerpoEliProv
+{
+    width:98%;
+    height:207px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+}
+
+/*Navegador para Inventario*/
+#subInv
+{
+    margin-top:4px;
+    width:62%;
+    height:96%;
+    float:left;
+    margin-left:10px;
+    background:blue;
+}
+#busInv
+{
+    float:right;
+    width:35%;
+    margin-top:3px;
+    margin-left:-25px;
+    padding:2px;
+    padding-bottom:3px;
+    padding-left:10px;
+    background:#610B0B;
+    border-radius:5px;
+}
+#subNavInv
+{
+    width:52%;
+    height:96%;
+    float:left;
+    margin-left:10px;
+}
+
+#subNavInv li
+{
+    float:left;
+    width:30%;
+    height:23px;
+    padding:3px;
+    margin:1px;
+    margin-top:4px;
+    padding-top:5px;
+    background: -webkit-linear-gradient(80deg, black 50%, #8258FA);
+    background: -moz-linear-gradient(80deg, black 50%, #8258FA);
+    background: -o-linear-gradient(80deg, black 50%, #8258FA);
+    border-radius:4px;
+    text-align:center;
+}
+    #subNavInv li a
+    {
+        color:white;
+    }
+#subNavInv li a:hover
+{
+    color:#D358F7;
+}
+#busInv
+{
+    float:right;
+    width:45%;
+    margin-top:3px;
+    margin-left:-25px;
+    padding:2px;
+    padding-bottom:3px;
+    padding-left:10px;
+    background:#29088A;
+    border-radius:5px;
+}
+.forInv
+{
+    height:350px;
+    width:550px;
+    position:relative;
+    background:white;
+    margin:auto;
+    margin-top:5px;
+    border:solid 1px black;
+    display:none;
+}
+.cuerpoInv
+{
+    width:92.5%;
+    height:317px;
+    background:#0B173B;
+    margin:auto;
+    margin-top:2px;
+    color:white;
+    padding-left:30px;
+}
+.listaFor
+{
+    margin:10px auto auto -10px;
+    width:98%;
+    height:200px;
+    background:white;
+    color:black;
+}
+
+/*Reportes*/
+#reportes
+{
+    width:600px;
+    height:420px;
+    background:#0B173B;
+    position:relative;
+    margin:auto;
+    display:none;
+}
+.divInv
+{
+    width:272px;
+    height:186px;
+    background:white;
+    float:left;
+    margin:5px 14px 5px 14px;
+}

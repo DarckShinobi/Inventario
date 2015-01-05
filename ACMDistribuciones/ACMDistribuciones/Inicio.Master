@@ -1,0 +1,95 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Inicio.master.cs" Inherits="ACMDistribuciones.Inicio" %>
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <script src="Scripts/jquery-2.1.1.js"></script>
+    <script src="Scripts/jquery-2.1.1.min.js"></script>
+    <script src="Scripts/jquery-ui-1.11.2.js"></script>
+    <script src="Scripts/Inicio.js"></script>
+    <link href="Estilos/Inicio.css" rel="stylesheet" />
+    
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+        
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="scriptManager" runat="server"></asp:ScriptManager>
+    <div>
+        <%--Division que contiene el logo y el formulario de usuario--%>
+        <div class="divUno">
+            
+            <div id="logo"> <%--Division del logo--%>
+                <h1>ACM</h1>
+                <h3>Distribuciones</h3>
+            </div>
+
+            <div id="buscador">  <%--Division del buscador--%>
+                <div id="cajaBus">  <%--Division que contiene la caja de texto del buscador--%>
+                    <asp:TextBox ID="txbBuscadorPrincipal" runat="server" CssClass="txbBuscador"></asp:TextBox>
+                </div>
+                <div id="botonBus">  <%--Division que contiene en boton del buscador--%>
+                    <asp:Button ID="btnBuscadorPrincipal" runat="server"  Text="Buscar"  CssClass="btnBuscador"/>
+                </div>
+            </div>
+
+            <div id="sesion">
+              <a href="Formularioweb1.aspx">Inicio Sesion</a>"
+            </div>
+
+        </div> <%--Fin division Uno--%>
+
+        <%--Division del navegador principal  Formulario web 1--%>
+        <div class="divisionNavPrin">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                  
+        </asp:ContentPlaceHolder>
+        </div>  <%--Fin de la division del navegador principal  Formulario web 1--%>
+
+        <%--Division con las categorias--%>
+        <div id="divCategorias">
+           <%--Control Tabla donde se muestran las categorias --%>
+            <asp:UpdatePanel ID="upTblCategorias" runat="server" UpdateMode="Always" >
+                <ContentTemplate> 
+                    <asp:Table ID="tblCategorias" runat="server" ></asp:Table>
+                </ContentTemplate>      
+            </asp:UpdatePanel>
+        </div>  <%--Fin division de categorias--%>
+
+        <%--Division del resultado de la busqueda--%>
+        <div id="divResultadoBus">
+            <div id="tituloResBus">
+                <ul>
+                    <li>
+                        Nombre
+                    </li>
+                    <li>
+                        Codigo
+                    </li>
+                    <li>
+                        x
+                    </li>
+                    <li>
+                        Precio x menor
+                    </li>
+                    <li>
+                        Precio x mayor
+                    </li>
+                    <li>
+                        Precio Proveedor
+                    </li>
+                </ul>
+                </div>
+            <div id="cuerpoRes">
+                 <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            </div>
+            
+          </div>
+        
+    </div>
+    </form>
+</body>
+</html>

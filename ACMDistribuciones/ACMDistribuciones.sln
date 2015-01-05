@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACMDistribuciones", "ACMDistribuciones\ACMDistribuciones.csproj", "{3BF19AE3-62C9-4DF6-9451-5632D12A8DFA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{9BEB22CD-97DE-4A26-93E1-3AE21CA9664F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3BF19AE3-62C9-4DF6-9451-5632D12A8DFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BF19AE3-62C9-4DF6-9451-5632D12A8DFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BF19AE3-62C9-4DF6-9451-5632D12A8DFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BF19AE3-62C9-4DF6-9451-5632D12A8DFA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BEB22CD-97DE-4A26-93E1-3AE21CA9664F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BEB22CD-97DE-4A26-93E1-3AE21CA9664F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BEB22CD-97DE-4A26-93E1-3AE21CA9664F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BEB22CD-97DE-4A26-93E1-3AE21CA9664F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,17 @@
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\HP\Documents\Visual Studio 2012\Projects\ACMDistribucionesV1.2\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\obj\Debug\CapaDatos.csprojResolveAssemblyReference.cache
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\HP\Documents\Visual Studio 2012\Projects\AcmDistribuciones1.3\CapaDatos\obj\Debug\CapaDatos.pdb
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\CapaDatos\bin\Debug\CapaDatos.dll.config
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\CapaDatos\bin\Debug\CapaDatos.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\CapaDatos\bin\Debug\CapaDatos.pdb
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\CapaDatos\obj\Debug\CapaDatos.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\CapaDatos\obj\Debug\CapaDatos.pdb

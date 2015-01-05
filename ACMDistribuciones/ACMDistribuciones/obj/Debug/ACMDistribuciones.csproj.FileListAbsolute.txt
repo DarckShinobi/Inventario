@@ -1,0 +1,8 @@
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\bin\ACMDistribuciones.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\bin\ACMDistribuciones.pdb
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\bin\CapaDatos.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\bin\BarcodeLib.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\bin\CapaDatos.pdb
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\obj\Debug\ACMDistribuciones.csprojResolveAssemblyReference.cache
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\obj\Debug\ACMDistribuciones.dll
+C:\Users\Shinobi\documents\visual studio 2012\Projects\ACMDistribuciones\ACMDistribuciones\obj\Debug\ACMDistribuciones.pdb
